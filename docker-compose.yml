@@ -2,9 +2,9 @@ version: "3.9"
 
 services:
   interpreter:
-    image: python:3.11
+    build:
+      dockerfile: ./docker/python.dockerfile
+      context: .
     container_name: interpreter
-    working_dir: /exercises
     volumes:
       - ./exercises:/exercises
-    command: tail -f /dev/null
